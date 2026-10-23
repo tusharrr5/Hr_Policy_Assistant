@@ -1,0 +1,27 @@
+# HR Policy Assistant — Requirements
+# Core
+langchain>=1.4.0
+langchain-community>=0.4.0
+langchain-core>=1.7.0
+langchain-text-splitters>=1.1.0
+langchain-chroma>=1.1.0
+langchain-huggingface>=1.2.0
+chromadb>=1.5.0
+pypdf>=6.0.0
+sentence-transformers>=6.0.0
+rank_bm25>=0.2.2
+pydantic>=2.0.0
+python-dotenv>=1.0.0
+
+# LLM Providers (install at least one)
+langchain-google-genai>=4.0.0
+langchain-groq>=1.1.0
+langchain-openai>=1.7.0
+
+# API & Extensions
+fastapi>=0.100.0
+uvicorn>=0.20.0
+mcp>=2.0.0
+
+# Testing
+pytest>=9.0.0
