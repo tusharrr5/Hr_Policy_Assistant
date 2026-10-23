@@ -15,19 +15,21 @@
 ## Table of Contents
 1. [Executive Summary & Exam Deliverables](#executive-summary--exam-deliverables)
 2. [Verified Ground Truth for 5 Official Exam Questions](#verified-ground-truth-for-5-official-exam-questions)
-3. [System Architecture & Pipeline](#system-architecture--pipeline)
-4. [Project Layout](#project-layout)
-5. [Key Technical Innovations](#key-technical-innovations)
-6. [Quick Start & Installation](#quick-start--installation)
-7. [Running the System](#running-the-system)
+3. [Visual Verification & UI Screenshots](#visual-verification--ui-screenshots)
+4. [System Architecture & Pipeline](#system-architecture--pipeline)
+5. [Project Layout](#project-layout)
+6. [Key Technical Innovations](#key-technical-innovations)
+7. [Quick Start & Installation](#quick-start--installation)
+8. [Running the System](#running-the-system)
    - [CLI & Exam Mode](#1-cli--exam-mode-mainpy)
    - [LLMOps Evaluation & SFT Dataset](#2-llmops-evaluation--sft-export-evaluatepy)
    - [Offline Unit Testing](#3-offline-unit-tests-testspy)
-   - [FastAPI Microservice](#4-fastapi-microservice-apipy)
-   - [Model Context Protocol Server](#5-mcp-server-mcp_serverpy)
-   - [Agentic Reasoning Demo](#6-agentic-tool-calling-demo-agent_demopy)
-8. [Configuration & Provider Support](#configuration--provider-support)
-9. [Test Suite Breakdown](#test-suite-breakdown)
+   - [Streamlit Web UI](#5-streamlit-web-ui-apppy)
+   - [FastAPI Microservice](#6-fastapi-microservice-apipy)
+   - [Model Context Protocol Server](#7-model-context-protocol-server-mcp_serverpy)
+   - [Agentic Reasoning Demo](#8-agentic-tool-calling-demo-agent_demopy)
+9. [Configuration & Provider Support](#configuration--provider-support)
+10. [Test Suite Breakdown](#test-suite-breakdown)
 
 ---
 
@@ -71,6 +73,24 @@ All answers are strictly grounded in `hr_manual.pdf`. Outside knowledge (such as
 | **Q3** | *What is the company's health-insurance premium amount?* | `Not found` *(Note: Medical Reimbursement/ESIC is cited on page 57 and travel insurance on page 71, but the premium amount does not exist in the manual. The guardrail rejects tangential matches).* | *None* | `✓ PASS` (Abstention) |
 | **Q4** | *What is the current GST rate in India?* | `Not found` *(External tax law absent from the manual; strictly excluded).* | *None* | `✓ PASS` (Abstention) |
 | **Q5** | *How many days of maternity leave are given?* | Confirmed female staff (who have worked for at least 80 days in the preceding 12 months) are provided a total of 12 weeks (stated parenthetically in the manual as 90 days) of Maternity Leave (ML) with pay, of which not more than 6 weeks (45 days) should precede the expected date of delivery. In case of miscarriage or medical termination of pregnancy, 4 weeks of paid leave from the date of miscarriage is permitted upon producing satisfactory evidence. | **Page 62**, `Annexure III, [G] Leave Policy` | `✓ PASS` (Supported) |
+
+---
+
+## Visual Verification & UI Screenshots
+
+The following live screenshots demonstrate the running ChatGPT-inspired conversational interface verifying the official examination questions against `hr_manual.pdf` with real page citations, section headers, latency benchmarks, and zero-hallucination guardrail abstentions:
+
+### 1. Q1: Privilege Leave (12 Days, Page 60 Citation)
+![Q1 Privilege Leave](screenshots/q1_privilege_leave.png)
+
+### 2. Q2: Probation Period for Senior Managers (3 Months, Page 42 Citation)
+![Q2 Probation Period](screenshots/q2_probation_period.png)
+
+### 3. Q3 & Q4: Out-of-Domain Guardrail Abstention (Strict `Not found`)
+![Q3 & Q4 Not Found](screenshots/q3_q4_unsupported_not_found.png)
+
+### 4. Q5: Maternity Leave Entitlement (12 Weeks / 90 Days, Page 62 Citation)
+![Q5 Maternity Leave](screenshots/q5_maternity_leave.png)
 
 ---
 
