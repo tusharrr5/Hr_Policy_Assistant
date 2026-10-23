@@ -251,7 +251,14 @@ pytest -v tests/
 ======================== 42 passed in 8.38s ========================
 ```
 
-### 5. FastAPI Microservice (`api.py`)
+### 5. Streamlit Web UI (`app.py`)
+Launch the interactive web portal with Chat, Exam Mode Inspector, and Metrics:
+```bash
+streamlit run app.py
+# Web app runs on http://localhost:8501
+```
+
+### 6. FastAPI Microservice (`api.py`)
 Launch the production REST API:
 ```bash
 python api.py
@@ -269,7 +276,7 @@ python api.py
     -d '{"question": "How many days of maternity leave are given?"}'
   ```
 
-### 6. Model Context Protocol Server (`mcp_server.py`)
+### 7. Model Context Protocol Server (`mcp_server.py`)
 Runs the standard stdio MCP server for agent integrations:
 ```bash
 python mcp_server.py
@@ -278,7 +285,7 @@ Exposes two tools:
 - `ask_hr_policy(question: str) -> str`
 - `verify_policy_page(page_number: int) -> str`
 
-### 7. Agentic Tool-Calling Demo (`agent_demo.py`)
+### 8. Agentic Tool-Calling Demo (`agent_demo.py`)
 Demonstrates multi-step agent reasoning where an agent queries the policy manual and autonomously validates the page citation:
 ```bash
 python agent_demo.py

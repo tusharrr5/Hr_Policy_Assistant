@@ -413,3 +413,13 @@ class HRPolicyRAG:
             "latency_ms": round(latency, 2),
             "retrieved_chunks": len(retrieved_docs),
         }
+
+    def ask(self, question: str) -> str:
+        """Convenience method returning the formatted string response directly."""
+        result = self.query(question, stateless=True)
+        return result["formatted_response"]
+
+
+# Alias for compatibility with Streamlit UI
+HRPolicyAssistant = HRPolicyRAG
+

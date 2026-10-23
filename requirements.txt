@@ -18,9 +18,10 @@ langchain-google-genai>=4.0.0
 langchain-groq>=1.1.0
 langchain-openai>=1.7.0
 
-# API & Extensions
+# API, UI & Extensions
 fastapi>=0.100.0
 uvicorn>=0.20.0
+streamlit>=1.30.0
 mcp>=2.0.0
 
 # Testing
