@@ -410,8 +410,10 @@ class HRPolicyRAG:
             "is_supported": is_supported,
             "page_number": page_number,
             "section_title": section_title,
+            "evidence_quote": raw_answer.evidence_quote if raw_answer else "",
             "latency_ms": round(latency, 2),
             "retrieved_chunks": len(retrieved_docs),
+            "retrieved_docs": retrieved_docs,
         }
 
     def ask(self, question: str) -> str:
